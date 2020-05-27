@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 63.1 (101010) - https://sketch.com -->
+    <title>B9FFA45F-1A5F-46A6-BBED-8B63BCA899DC</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M26.83,12.42 C27.4495321,12.3739205 28.0592948,12.5943503 28.5061524,13.0259307 C28.95301,13.4575111 29.1945092,14.0592403 29.17,14.68 C29.1439517,15.4775953 28.8011944,16.231944 28.2175477,16.7761804 C27.633901,17.3204169 26.8574682,17.609686 26.06,17.58 C25.429668,17.6522035 24.8010363,17.4313546 24.3543643,16.9807817 C23.9076924,16.5302087 23.6923182,15.8996803 23.77,15.27 C23.8508087,13.648513 25.2068669,12.3855177 26.83,12.42 L26.83,12.42 Z M22,35.58 C20.78,35.58 19.87,34.84 20.73,31.49 L22.14,25.6 C22.37,24.67 22.42,24.27 22.14,24.27 C21.1066864,24.5260465 20.1255216,24.9591123 19.24,25.55 L18.63,24.55 C21.63,22.02 25.04,20.55 26.51,20.55 C27.72,20.55 27.93,22.02 27.33,24.29 L25.71,30.48 C25.43,31.58 25.55,31.95 25.83,31.95 C26.8541462,31.7258054 27.8041261,31.2439315 28.59,30.55 L29.29,31.49 C26.39,34.49 23.29,35.62 22,35.62 L22,35.58 Z M24,48 C10.745166,48 0,37.254834 0,24 C0,10.745166 10.745166,0 24,0 C37.254834,0 48,10.745166 48,24 C48,30.3651958 45.4714358,36.4696897 40.9705627,40.9705627 C36.4696897,45.4714358 30.3651958,48 24,48 Z M24,1.35 C11.4907504,1.35 1.35,11.4907504 1.35,24 C1.35,36.5092496 11.4907504,46.65 24,46.65 C36.5092496,46.65 46.65,36.5092496 46.65,24 C46.6389729,11.4953208 36.5046792,1.36102706 24,1.35 Z" id="path-1"></path>
+    </defs>
+    <g id="Breakpoint-S" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="24_My-contacts_S" transform="translate(-47.000000, -1488.000000)">
+            <g id="07_Cards/08_Info&amp;Tips/07.08.02_Text_Icon_Tip/S" transform="translate(32.000000, 1472.000000)">
+                <g id="icons/products/red/F-action-navigation/f40-light-bulb" transform="translate(15.000000, 16.000000)">
+                    <g id="icons/products/red/G-communication/g55-info-circle">
+                        <polygon id="Rectangle-path" fill-opacity="0" fill="#FFFFFF" fill-rule="nonzero" points="-3.091e-13 0 48 0 48 48 -3.091e-13 48"></polygon>
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Shape" fill="#C5281C" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <polygon id="Color-Style" fill="#C5281C" mask="url(#mask-2)" points="0 0 48 0 48 48 0 48"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

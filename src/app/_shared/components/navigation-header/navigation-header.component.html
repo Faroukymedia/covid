@@ -1,0 +1,72 @@
+<ion-header [translucent]="translucentHeader">
+  <ion-toolbar>
+    <mh-responsive [breakpoints]="['L', 'XL']">
+      <div class="header--desktop" [ngClass]="headerCommonClasses">
+        <img
+          *ngIf="logo"
+          (click)="logoClick()"
+          [src]="logo"
+          [ngClass]="{ logo: true, 'logo--centered': isLogoCentered }"
+        />
+        <div class="side-menu-icon--mobile" (click)="leftMobileClick()" *ngIf="backIconLeft">
+          <mh-ionicon name="ios-arrow-back" class="back-icon"></mh-ionicon>
+        </div>
+        <div *ngIf="title" class="title">
+          <h1>{{ title }}</h1>
+        </div>
+        <ng-container *ngIf="tabs$ | async as tabs">
+          <ul class="tabs" *ngIf="tabs.length > 0">
+            <ng-container *ngFor="let tab of tabs; index as i">
+              <li (click)="tabClick(tab)" class="tab" [ngClass]="{ 'tab--active': tab.isActive }">
+                {{ tab.title }}
+              </li>
+            </ng-container>
+          </ul>
+        </ng-container>
+        <div (click)="sideMenuClick()" *ngIf="desktopMenuIconRight" class="side-menu-icon side-menu-icon--desktop">
+          <img [src]="desktopMenuIconRight" />
+        </div>
+
+        <div *ngIf="buttonRight" (click)="sideMenuClick()" class="">
+          <mh-primary-button
+            [text]="buttonRight"
+            [redButton]="true"
+            [small]="true"
+            [padding]="false"
+          ></mh-primary-button>
+        </div>
+      </div>
+    </mh-responsive>
+    <mh-responsive [breakpoints]="['S', 'M']">
+      <div class="header--mobile" [ngClass]="headerCommonClasses">
+        <div
+          (click)="hamburgerMenuClick()"
+          *ngIf="!(disableSideMenu$ | async)"
+          class="side-menu-icon side-menu-icon--mobile"
+          [ngClass]="{ 'side-menu-icon--app': isApp }"
+        >
+          <mh-ionicon [name]="(displayMenu$ | async) ? 'close' : 'menu'"></mh-ionicon>
+        </div>
+        <div *ngIf="backIconLeft" class="side-menu-icon--mobile" (click)="leftMobileClick()">
+          <mh-ionicon name="ios-arrow-back" class="back-icon"></mh-ionicon>
+        </div>
+        <img
+          *ngIf="logo"
+          [src]="logo"
+          [ngClass]="{ logo: true, 'logo--app': isApp, 'logo--centered': isLogoCentered }"
+        />
+        <div *ngIf="title" class="title">
+          <h1>{{ title }}</h1>
+        </div>
+        <div *ngIf="buttonRight" (click)="sideMenuClick()" class="">
+          <mh-primary-button
+            [text]="buttonRight"
+            [redButton]="true"
+            [small]="true"
+            [padding]="false"
+          ></mh-primary-button>
+        </div>
+      </div>
+    </mh-responsive>
+  </ion-toolbar>
+</ion-header>

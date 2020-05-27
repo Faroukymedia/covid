@@ -1,0 +1,15 @@
+<ng-container *ngIf="stickyBoxOptions$ | async as stickyBoxOptions">
+  <mh-sticky-box
+    #stickyBox
+    id="sticky-box"
+    [closeIcon]="stickyBoxOptions.closeIcon"
+    [padding]="stickyBoxOptions.padding"
+    [icon]="stickyBoxOptions.icon"
+    [timerOn]="stickyBoxOptions.timerOn"
+    [timer]="stickyBoxOptions.timer"
+    [top]="stickyBoxOptions.top"
+    [bottom]="stickyBoxOptions.bottom"
+    [hidden]="isHidden$ | async"
+    (hideEvent)="onHideEvent()"
+  ></mh-sticky-box>
+</ng-container>

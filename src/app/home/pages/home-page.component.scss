@@ -1,0 +1,50 @@
+@import 'helpers';
+@import 'variables';
+
+:host {
+  height: 100%;
+
+  ion-content {
+    --background: none;
+  }
+
+  .welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+
+    color: rgba(color(white, primary), 1);
+    text-align: center;
+
+    background-color: rgba(black, 0.25);
+
+    span.red {
+      color: color(red-11);
+    }
+
+    h1 {
+      font-size: calcrem(24px);
+      line-height: calcrem(32px);
+    }
+
+    h4 {
+      font-size: calcrem(18px);
+      line-height: calcrem(24px);
+    }
+
+    ul {
+      list-style-type: none;
+
+      li {
+        margin-bottom: calcrem(10px);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,129 @@
+@import 'helpers';
+
+.side-menu-container {
+  position: relative;
+
+  width: 100%;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  @include mq-breakpoint-s() {
+    height: calc(100% - #{get-dimension(s, header-height)} - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  }
+
+  @include mq-breakpoint-m() {
+    height: calc(100% - #{get-dimension(m, header-height)} - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  }
+
+  @include mq-breakpoint-l() {
+    height: calc(100% - #{get-dimension(l, header-height)} - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  }
+
+  @include mq-breakpoint-xl() {
+    height: calc(100% - #{get-dimension(xl, header-height)} - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  }
+
+  .side-menu {
+    position: fixed;
+
+    // WA-2 The side menu is above the content page layout with the value 1
+    // expect on the intermediary page where the slider and the map logo is above the side menu
+    // The convention is :
+    // - Menu: 1000
+    // - Popup : 500
+    // - Controles : 0-10
+    z-index: 1000;
+
+    height: calc(100% - #{get-dimension(s, header-height)} - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+
+    transition: 0.3s;
+
+    @include mq-breakpoint-s() {
+      left: -#{calcrem(312px)};
+
+      width: calcrem(312px);
+    }
+
+    @include mq-breakpoint-m() {
+      left: -#{calcrem(312px)};
+
+      width: calcrem(312px);
+    }
+
+    @include mq-breakpoint-l() {
+      right: -#{calcrem(400px)};
+
+      width: calcrem(400px);
+    }
+
+    @include mq-breakpoint-xl() {
+      right: -#{calcrem(400px)};
+
+      width: calcrem(400px);
+    }
+
+    &--active {
+      @include mq-breakpoint-s() {
+        left: 0;
+      }
+
+      @include mq-breakpoint-m() {
+        left: 0;
+      }
+
+      @include mq-breakpoint-l() {
+        right: 0;
+      }
+
+      @include mq-breakpoint-xl() {
+        right: 0;
+      }
+    }
+  }
+
+  .page-content {
+    position: relative;
+
+    min-width: 100%;
+    height: 100%;
+
+    background: none;
+
+    transition: 0.3s;
+
+    @include mq-breakpoint-s() {
+      left: 0;
+    }
+
+    @include mq-breakpoint-m() {
+      left: 0;
+    }
+
+    @include mq-breakpoint-l() {
+      right: 0;
+    }
+
+    @include mq-breakpoint-xl() {
+      right: 0;
+    }
+
+    &--side-menu-opened {
+      @include mq-breakpoint-s() {
+        left: #{calcrem(312px)};
+      }
+
+      @include mq-breakpoint-m() {
+        left: #{calcrem(312px)};
+      }
+
+      @include mq-breakpoint-l() {
+        right: #{calcrem(400px)};
+      }
+
+      @include mq-breakpoint-xl() {
+        right: #{calcrem(400px)};
+      }
+    }
+  }
+}

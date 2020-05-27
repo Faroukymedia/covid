@@ -1,0 +1,44 @@
+@import 'helpers';
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+ion-footer {
+  margin-bottom: calcrem(20px);
+  padding: calcrem(16px);
+
+  font-size: calcrem(14px);
+  line-height: calcrem(17px);
+  letter-spacing: calcrem(0.4px);
+  text-align: center;
+
+  .more-options {
+    margin: calcrem(15px) auto;
+
+    a {
+      color: var(--generali);
+      font-size: calcrem(14px);
+    }
+  }
+
+  h1 {
+    margin: calcrem(10px) auto;
+
+    color: color(grey, content);
+
+    font-size: calcrem(14px);
+    font-family: var(--font-family-bold);
+    text-align: left;
+  }
+
+  p {
+    margin: calcrem(10px) auto;
+
+    color: color(grey, content);
+
+    font-size: calcrem(14px);
+    text-align: left;
+  }
+}

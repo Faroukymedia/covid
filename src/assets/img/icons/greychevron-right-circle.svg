@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>icons/custom/misc/greychevron-right-circle</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Breakpoint-S" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="06_-Reimboursement_S" transform="translate(-16.000000, -552.000000)" fill="#6F7072">
+            <g id="06_List_Items/08_SelfContained/06.08.13_Link_Container/S-Copy-2" transform="translate(0.000000, 528.000000)">
+                <g id="04_Components/01_Buttons/Text_Btn_Grey" transform="translate(16.000000, 14.000000)">
+                    <g id="buttons/text-button/grey/default">
+                        <g id="icons/custom/misc/grey/plus-circle" transform="translate(0.000000, 10.000000)">
+                            <g id="icons/navigation-actions/android/grey/plus-circle">
+                                <g id="android-add-circle">
+                                    <path d="M12,0 C5.37259615,0 0,5.37259615 0,12 C0,18.6274038 5.37259615,24 12,24 C18.6274038,24 24,18.6274038 24,12 C24,5.37259615 18.6274038,0 12,0 Z M18.1730769,13.2115385 L13.2115385,13.2115385 L13.2115385,18.1730769 L10.7884615,18.1730769 L10.7884615,13.2115385 L5.82692308,13.2115385 L5.82692308,10.7884615 L10.7884615,10.7884615 L10.7884615,5.82692308 L13.2115385,5.82692308 L13.2115385,10.7884615 L18.1730769,10.7884615 L18.1730769,13.2115385 Z" id="Shape"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

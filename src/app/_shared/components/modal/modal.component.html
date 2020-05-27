@@ -1,0 +1,6 @@
+<div class="backdrop" [ngClass]="{ 'full-width-mobile': isFullWidthOnMobile }" [hidden]="!isShown">
+  <div class="content">
+    <ion-icon class="close-button" name="md-close-circle" (click)="dismiss()"></ion-icon>
+    <ng-content></ng-content>
+  </div>
+</div>

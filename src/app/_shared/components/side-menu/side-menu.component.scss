@@ -1,0 +1,97 @@
+@import '../../../../theme/helpers.scss';
+@import '../../../../theme/variables.scss';
+
+// height: 100%;
+.side-menu-content {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  background-color: color(red-15);
+
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: calcrem(16px);
+
+    color: color(white, primary);
+
+    img {
+      width: calcrem(50px);
+      height: calcrem(50px);
+      margin: calcrem(16px);
+    }
+
+    .profile-title {
+      font-size: calcrem(22px);
+      line-height: calcrem(32px);
+    }
+
+    .profile-link {
+      color: color(white, primary);
+      font-size: calcrem(14px);
+      line-height: calcrem(17px);
+      text-decoration: underline;
+    }
+  }
+
+  .actions-list {
+    .action {
+      position: relative;
+
+      padding: calcrem(25px) calcrem(16px) calcrem(25px) calcrem(63px);
+
+      color: color(white, primary);
+      font-size: calcrem(17px);
+      line-height: calcrem(22px);
+
+      cursor: pointer;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 0;
+        height: 100%;
+
+        transition: 0.15s;
+
+        content: '';
+      }
+
+      &--active {
+        &::after {
+          width: calcrem(3px);
+
+          background-color: color(white, primary);
+        }
+      }
+    }
+  }
+
+  .side-menu-scrollable {
+    max-height: calc(100% - #{calcrem(72px)});
+    overflow-y: auto;
+  }
+
+  .primary-actions {
+    background-color: transparent;
+  }
+
+  .bottom-action {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    padding: calcrem(11px) 0 calcrem(11px) calcrem(52px);
+
+    background-color: color(generali);
+    cursor: pointer;
+  }
+}

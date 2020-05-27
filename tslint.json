@@ -17,21 +17,35 @@
     "max-classes-per-file": false,
     "max-line-length": [
       true,
-      140
+      {
+        "limit": 120,
+        "ignore-pattern": "^import {(.*?)}"
+      }
     ],
-    "member-access": false,
+    "member-access": true,
     "member-ordering": [
       true,
       {
         "order": [
-          "static-field",
-          "instance-field",
-          "static-method",
-          "instance-method"
+          "public-static-field",
+          "protected-static-field",
+          "private-static-field",
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
+          "public-constructor",
+          "protected-constructor",
+          "private-constructor",
+          "public-static-method",
+          "protected-static-method",
+          "private-static-method",   
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
         ]
       }
     ],
-    "no-consecutive-blank-lines": false,
+    "no-consecutive-blank-lines": true,
     "no-console": [
       true,
       "debug",
@@ -40,7 +54,7 @@
       "timeEnd",
       "trace"
     ],
-    "no-empty": false,
+    "no-empty": true,
     "no-inferrable-types": [
       true,
       "ignore-params"
@@ -50,6 +64,7 @@
     "no-switch-case-fall-through": true,
     "no-use-before-declare": true,
     "no-var-requires": false,
+    "restrict-plus-operands": false,
     "object-literal-key-quotes": [
       true,
       "as-needed"
@@ -74,13 +89,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      "mwh",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      "mwh",
       "page",
       "kebab-case"
     ]

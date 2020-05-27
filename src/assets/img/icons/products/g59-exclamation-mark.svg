@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="48px" viewBox="0 0 12 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 60.1 (101010) - https://sketch.com -->
+    <title>4799FDD1-FF9D-4D6B-95E7-98FF85815E80</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M29.4758298,40.2471766 L29.4758298,44.4406563 C29.4758298,45.3846529 29.1008138,46.2899859 28.4333074,46.9574924 C27.765801,47.6249988 26.860468,48 25.9164713,48 L21.5593437,48 C19.5935725,48 18,46.4064275 18,44.4406563 L18,40.2369486 C18,38.2711774 19.5935725,36.6776049 21.5593437,36.6776049 L25.9164713,36.6776049 C26.8622428,36.6776049 27.7691292,37.0540059 28.4369305,37.7237261 C29.1047317,38.3934463 29.4785328,39.3014091 29.4758298,40.2471766 Z M23.6765395,33.9569622 L23.6765395,33.9569622 C25.2964759,33.950796 26.6632846,32.7499257 26.8779033,31.1442574 L29.1382911,13.2759429 C29.1382911,13.2759429 29.1382911,13.2145749 29.1382911,13.1838909 L29.1382911,3.52865971 C29.1327611,1.59009472 27.5685874,0.0168005478 25.6300874,0 L21.7843597,0 C19.8395302,0.00563721053 18.2659198,1.58382207 18.265928,3.52865971 L18.265928,13.1838909 C18.2556584,13.2101989 18.2556584,13.2394069 18.265928,13.2657149 L20.4751758,31.1442574 C20.681311,32.7544508 22.0532076,33.9597913 23.6765395,33.9569622 Z" id="path-1"></path>
+    </defs>
+    <g id="Asset-Artboard-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons/products/red/G-communication/g59-exclamation-mark" transform="translate(-17.617977, 0.000000)">
+            <g>
+                <polygon id="Rectangle-path" fill-opacity="0" fill="#FFFFFF" fill-rule="nonzero" points="0 0 48 0 48 48 0 48"></polygon>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Shape" fill="#C5281C" fill-rule="nonzero" xlink:href="#path-1"></use>
+                <polygon id="Color-Style" fill="#C5281C" mask="url(#mask-2)" points="0 0 48 0 48 48 0 48"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

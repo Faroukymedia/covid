@@ -1,19 +1,23 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
-
-import { HomePageRoutingModule } from './home-routing.module';
-
+import { IonicModule } from '@ionic/angular';
+import { SharedModule } from '@shared/shared.module';
+import { HomeRoutingModule } from './home-routing.module';
+import { HomePageComponent } from './pages/home-page.component';
+import { CovidState } from './store/covid.state';
+import { NgxsModule } from '@ngxs/store';
 
 @NgModule({
+  declarations: [HomePageComponent],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomeRoutingModule,
+    SharedModule,
+    NgxsModule.forFeature([CovidState])
   ],
-  declarations: [HomePage]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class HomePageModule {}
+export class HomePageModule { }

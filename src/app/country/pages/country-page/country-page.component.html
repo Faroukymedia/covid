@@ -1,0 +1,13 @@
+<mwh-navigation-header
+  [desktopMenuIconRight]="'assets/img/icons/profile-icon.svg'"
+></mwh-navigation-header>
+<ion-content>
+  <ng-container *ngIf="countrySummary">
+    <mwh-page-layout>
+      <div class="welcome-container">
+        <world-summary [summary]="countrySummary" [date]="countrySummary?.Date"></world-summary>
+      </div>
+      
+    </mwh-page-layout>
+  </ng-container>
+</ion-content>

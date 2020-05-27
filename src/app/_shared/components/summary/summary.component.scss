@@ -1,0 +1,57 @@
+@import 'helpers';
+@import 'variables';
+
+  .legend-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calcrem(16px);
+
+    $legend-height: calcrem(64px);
+
+    .legend {
+      display: flex;
+      flex: 0 0 calcrem(100px);
+      width: calcrem(186px);
+      height: $legend-height;
+      padding: calcrem(12px) calcrem(16px) 0 calcrem(16px);
+
+      .dot {
+        $dot-size: 8px;
+
+        width: calcrem($dot-size);
+        height: calcrem($dot-size);
+        margin: calcrem(2px) calcrem(8px) 0 0;
+
+        border-radius: calcrem($dot-size / 2);
+      }
+
+      &-texts {
+        .label {
+          margin: 0 0 calcrem(8px);
+
+          color: color(gray, content);
+          font-size: calcrem(12px);
+        }
+
+        .value {
+          color: color(black, content);
+          font-size: calcrem(22px);
+
+          .percent {
+            margin-left: calcrem(8px);
+
+            color: color(grey, content);
+          }
+        }
+      }
+    }
+
+    .divider {
+      flex: 0 0 calcrem(1px);
+      width: calcrem(1px);
+      height: $legend-height;
+      margin-bottom: calcrem(8px);
+
+      background-color: color(grey, light-divider);
+    }
+  }

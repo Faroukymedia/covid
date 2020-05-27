@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>04_Components/06_Badges_&amp;_Tags/Avatars/04.06.10_Agent_Avatar</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Breakpoint-S" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="27_My-contacts_S" transform="translate(-144.000000, -96.000000)">
+            <g id="04_Components/06_Badges_&amp;_Tags/Avatars/04.06.11_No_Avatar_Red/S-XL" transform="translate(144.000000, 96.000000)">
+                <circle id="Photo" fill="#AF2219" fill-rule="evenodd" cx="44" cy="44" r="44"></circle>
+                <path d="M38.4190633,44.9677275 C35.9712151,43.222689 34.375,40.3602525 34.375,37.125 C34.375,31.8092593 38.6842593,27.5 44,27.5 C49.3157407,27.5 53.625,31.8092593 53.625,37.125 C53.625,40.3602525 52.0287849,43.222689 49.5809367,44.9677275 C55.9471812,47.2555217 60.5,53.3460769 60.5,60.5 L57.75,60.5 C57.75,52.9060847 51.5939153,46.75 44,46.75 C36.4060847,46.75 30.25,52.9060847 30.25,60.5 L27.5,60.5 C27.5,53.3460769 32.0528188,47.2555217 38.4190633,44.9677275 Z M44,44 C47.7969577,44 50.875,40.9219577 50.875,37.125 C50.875,33.3280423 47.7969577,30.25 44,30.25 C40.2030423,30.25 37.125,33.3280423 37.125,37.125 C37.125,40.9219577 40.2030423,44 44,44 Z" id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

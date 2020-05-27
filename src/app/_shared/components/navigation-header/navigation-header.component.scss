@@ -1,0 +1,190 @@
+@import 'helpers';
+@import 'variables';
+
+ion-header {
+  &.header-translucent-ios {
+    backdrop-filter: none;
+  }
+
+  &::after {
+    display: none;
+  }
+
+  ion-toolbar {
+    --min-height: none;
+    --padding-top: 0;
+    --padding-bottom: 0;
+    --padding-start: 0;
+    --padding-end: 0;
+    --background: #000000;
+  }
+
+  &.header-translucent {
+    ion-toolbar {
+      --ion-toolbar-background: transparent;
+    }
+  }
+
+  &.header-ios ion-toolbar:last-child {
+    --border-width: 0;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+
+    .tabs {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+
+      .tab {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100%;
+        margin: 0 calcrem(17px);
+
+        color: color(white, primary);
+        font-size: calcrem(22px);
+
+        cursor: pointer;
+
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+
+          width: 100%;
+          height: 0;
+
+          transition: 0.15s;
+
+          content: '';
+        }
+
+        &--active {
+          &::after {
+            height: calcrem(3px);
+
+            background-color: color(white, primary);
+          }
+        }
+      }
+    }
+
+    .side-menu-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      margin-right: 0;
+      margin-left: auto;
+
+      background-color: color(red-15);
+      cursor: pointer;
+
+      img {
+        width: calcrem(24px);
+        height: calcrem(24px);
+      }
+
+      &--desktop {
+        width: calcrem(72px);
+      }
+
+      &--app {
+        background-color: transparent;
+      }
+
+      &--mobile {
+        width: calcrem(44px);
+        margin-right: 0;
+        margin-left: 0;
+
+        i {
+          color: color(white, primary);
+          font-size: calcrem(28px);
+          
+          &.ion-ios-arrow-back {
+            margin-left: calcrem(12px);
+          }
+        }
+      }
+    }
+
+    &--mobile {
+      height: get-dimension(s, header-height);
+
+      .logo {
+        height: get-dimension(s, logo-height);
+        margin-left: calcrem(34px);
+      }
+
+      .title {
+        margin: 0 auto;
+
+        color: color(white, primary);
+
+        font-size: calcrem(17px);
+        text-align: center;
+      }
+
+    }
+
+    &--desktop {
+      height: get-dimension(l, header-height);
+
+      .logo {
+        width: get-dimension(l, logo-width);
+        height: get-dimension(l, logo-height);
+      }
+
+      .title {
+        margin: 0 auto;
+
+        color: color(white, primary);
+        
+        font-size: calcrem(17px);
+        text-align: center;
+      }
+    }
+
+    &--transparent {
+      background-color: transparent;
+
+      .side-menu-icon {
+        background-color: transparent;
+      }
+    }
+
+    &--red {
+      background-color: color(generali);
+    }
+
+    &--white {
+      background-color: color(white, primary);
+    }
+
+    .logo {
+      margin-right: calcrem(42px);
+      margin-left: calcrem(24px);
+
+      cursor: pointer;
+
+      &--centered,
+      &--app {
+        position: absolute;
+        right: 0;
+        left: 0;
+
+        margin: 0 auto;
+      }
+    }
+  }
+}

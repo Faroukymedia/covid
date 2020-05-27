@@ -1,0 +1,55 @@
+<div class="side-menu-content">
+  <section class="side-menu-scrollable">
+    <ng-container>
+      <section class="profile-container">
+       <!--  <img src="assets/img/icons/e11-man-profile.svg" />
+        
+          <p class="profile-title">
+            hello
+          </p> -->
+         
+      </section>
+    </ng-container>
+    <ng-container #primaryActionsContainer *ngIf="primaryActions && primaryActions.length > 0">
+      <section class="primary-actions">
+        <ng-container *ngIf="primaryActions && primaryActions.length > 0">
+          <section class="primary-actions-list">
+            <ul class="actions-list">
+              <ng-container *ngFor="let action of primaryActions; index as i">
+                <li
+                  role="button"
+                  class="action"
+                  [ngClass]="{ 'action--active': action.isActive }"
+                  (click)="onActionClicked(action)"
+                >
+                  {{ action.title }}
+                </li>
+                <mh-divider
+                  *ngIf="action.hasDividerBottom"
+                  [hrShow]="true"
+                  [fullWidth]="false"
+                  [background]="true"
+                ></mh-divider>
+              </ng-container>
+            </ul>
+          </section>
+        </ng-container>
+      </section>
+    </ng-container>
+  </section>
+  <!-- <ng-container #bottomActionContainer *ngIf="bottomAction">
+    <section class="bottom-action">
+      <ng-container>
+        <section class="bottom-action-section">
+          <mh-list-item-black-title-2
+            (click)="onActionClicked(bottomAction)"
+            [padding]="true"
+            [title]="bottomAction?.title | translate"
+            [whiteFont]="true"
+            [colorBg]="'transparent'"
+          ></mh-list-item-black-title-2>
+        </section>
+      </ng-container>
+    </section>
+  </ng-container> -->
+</div>

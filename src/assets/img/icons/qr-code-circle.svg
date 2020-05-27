@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>99/Pieces/Items/Action button</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Breakpoint-S" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="02_Details-S" transform="translate(-279.000000, -216.000000)">
+            <g id="11_Covers/02_Special_Pages/11.02.09_Cover_Smart_Home/S" transform="translate(0.000000, 64.000000)">
+                <g id="Action-2" transform="translate(257.000000, 152.000000)">
+                    <g id="99/Pieces/Items/Action-button" transform="translate(22.000000, 0.000000)">
+                        <g id="Group">
+                            <circle id="circle" fill="#FFFFFF" cx="22" cy="22" r="22"></circle>
+                            <g id="QR-Code" transform="translate(10.000000, 10.000000)" stroke="#C5281C">
+                                <g>
+                                    <rect id="Rectangle" stroke-width="0.7" x="3.35" y="3.35" width="2.3" height="2.3" rx="1"></rect>
+                                    <rect id="Rectangle-Copy-4" stroke-width="0.7" x="3.35" y="18.35" width="2.3" height="2.3" rx="1"></rect>
+                                    <rect id="Rectangle-Copy-2" stroke-width="0.7" x="18.35" y="3.35" width="2.3" height="2.3" rx="1"></rect>
+                                    <rect id="Rectangle" stroke-width="0.7" x="0.35" y="0.35" width="8.3" height="8.3" rx="3"></rect>
+                                    <rect id="Rectangle-Copy-5" stroke-width="0.7" x="0.35" y="15.35" width="8.3" height="8.3" rx="3"></rect>
+                                    <rect id="Rectangle-Copy-3" stroke-width="0.7" x="15.35" y="0.35" width="8.3" height="8.3" rx="3"></rect>
+                                    <polyline id="Path-2-Copy" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" transform="translate(22.000000, 17.000000) scale(-1, 1) translate(-22.000000, -17.000000) " points="20.5 15.5 23.5 15.5 23.5 18.5"></polyline>
+                                    <polyline id="Path-2-Copy-2" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" transform="translate(17.000000, 17.000000) scale(-1, 1) translate(-17.000000, -17.000000) " points="15.5 15.5 18.5 15.5 18.5 18.5"></polyline>
+                                    <polyline id="Path-3" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" points="18.5 23.5 18.5 22 15.5 22 15.5 23.5"></polyline>
+                                    <path d="M17.25,20.25 L17.25,22" id="Path-4" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="" id="Path-5" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M22.25,24 L22.25,20.5" id="Path-6-Copy" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,90 @@
+/* Sizing */
+@function calcrem($size) {
+    $rem: $size / 10px;
+  
+    @return #{$rem}rem;
+  }
+  
+  $breakpoint-s: (
+    header-height: calcrem(44px),
+    logo-width: calcrem(230px),
+    logo-height: calcrem(16px)
+  );
+  $breakpoint-m: (
+    header-height: calcrem(44px),
+    logo-width: calcrem(230px),
+    logo-height: calcrem(16px)
+  );
+  $breakpoint-l: (
+    header-height: calcrem(72px),
+    logo-width: calcrem(180px),
+    logo-height: calcrem(24px)
+  );
+  $breakpoint-xl: (
+    header-height: calcrem(72px),
+    logo-width: calcrem(180px),
+    logo-height: calcrem(24px)
+  );
+  
+  @function get-dimension($breakpoint, $keys...) {
+    $map: $breakpoint-l;
+  
+    @if $breakpoint == s {
+      $map: $breakpoint-s;
+    }
+    
+    @else if $breakpoint == m {
+      $map: $breakpoint-m;
+    }
+    
+    @else if $breakpoint == l {
+      $map: $breakpoint-l;
+    }
+    
+    @else if $breakpoint == xl {
+      $map: $breakpoint-xl;
+    }
+  
+    @each $key in $keys {
+      $map: map-get($map, $key);
+    }
+  
+    @return $map;
+  }
+  
+  /* Responsive functions */
+  @mixin mq-breakpoint-s {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+  }
+  
+  @mixin mq-breakpoint-m {
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  }
+  
+  @mixin mq-breakpoint-l {
+    @media screen and (min-width: 992px) and (max-width: 1366px) {
+      @content;
+    }
+  }
+  
+  @mixin mq-breakpoint-xl {
+    @media screen and (min-width: 1366px) {
+      @content;
+    }
+  }
+  
+  /* Colors functions */
+  @function color($keys...) {
+    $map: $mh-theme;
+    
+    @each $key in $keys {
+      $map: map-get($map, $key);
+    }
+  
+    @return $map;
+  }
+  

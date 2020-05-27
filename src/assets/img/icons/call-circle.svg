@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/action/call - circle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Generali-Library" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Cards---Agent-Cards" transform="translate(-642.000000, -642.000000)">
+            <g id="Overview-Agent-collapsed" transform="translate(600.000000, 520.000000)">
+                <g id="icon/action/call---circle" transform="translate(40.000000, 120.000000)">
+                    <g id="Guides/Bound/Bound---48dp">
+                        <rect id="Bound" x="0" y="0" width="48" height="48"></rect>
+                    </g>
+                    <circle id="circle" fill="#FFFFFF" cx="24" cy="24" r="22"></circle>
+                    <path d="M18.1839378,28.7227461 C24.0690731,36.0126816 31.2113135,35.9017113 32.3458311,35.3804869 C34.0634553,34.5912043 34.9793662,32.4400127 34.9793662,32.4400127 C34.9793662,32.4400127 36.1931229,30.8398299 35.1742012,30.0092336 C34.1557456,29.1781569 31.5198799,27.3348961 31.5198799,27.3348961 C31.5198799,27.3348961 30.525196,26.4207118 29.7728906,27.3348961 C29.0205852,28.2490805 28.7250699,30.2984291 27.6502147,29.7719204 C26.5748934,29.2458921 20.1994078,24.4213239 19.0439152,20.4124598 C18.9343788,20.0925194 20.0381329,19.4228541 20.7368354,18.7579928 C21.4355379,18.0936118 21.5161754,17.5397208 20.7904384,16.4871839 C20.0647014,15.4346469 18.2105062,13.3295729 18.2105062,13.3295729 C18.2105062,13.3295729 17.2414585,11.8249879 15.9265554,12.9976226 C15.9265554,12.9976226 12.8343657,15.7305678 12.6083011,17.1698197 C12.4036778,18.4731208 12.2988025,21.4323302 18.1839378,28.7227461 Z" id="Phone" stroke="#C5281C" stroke-width="1.1"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

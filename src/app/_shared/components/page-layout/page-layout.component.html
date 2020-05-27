@@ -1,0 +1,25 @@
+<section
+  class="side-menu-container"
+  *ngIf="configuration$ | async as configuration"
+  (swipeLeft)="toggleSideMenu(false)"
+  (swipeRight)="toggleSideMenu(true)"
+>
+  <div
+    class="side-menu"
+    [ngClass]="{ 'side-menu--active': toggleSideMenu$ | async }"
+    *ngIf="configuration && (configuration.primaryActions || configuration.bottomAction)"
+  >
+    <mh-responsive [breakpoints]="['L', 'XL']">
+      <mwh-side-menu [bottomAction]="configuration.bottomAction"></mwh-side-menu>
+    </mh-responsive>
+    <mh-responsive [breakpoints]="['S', 'M']">
+      <mwh-side-menu
+        [primaryActions]="configuration.primaryActions"
+        [bottomAction]="configuration.bottomAction"
+      ></mwh-side-menu>
+    </mh-responsive>
+  </div>
+  <div class="page-content">
+    <ng-content></ng-content>
+  </div>
+</section>

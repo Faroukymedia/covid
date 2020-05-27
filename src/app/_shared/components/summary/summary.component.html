@@ -1,0 +1,77 @@
+<mh-contract-card-first-level
+  [padding]="true"
+  [icon]="'products/g59-exclamation-mark'"
+  [title]="summary?.TotalDeaths | number"
+  [numberPolicy]="'Nombre de décès'"
+  [badgeActive]="true"
+  [badgetitle]="displayUpdates(summary?.NewDeaths)"
+  [colorbadge]="'red'"
+  [cardActive]="true"
+  [text]="getDate(date) ? 'Mise à jour :' : ''"
+  [details]="
+    getDate(date) ? 'il y\'a ' + getDate(date)?.minute + ' minutes' : ''
+  "
+></mh-contract-card-first-level>
+
+<mh-contract-card-first-level
+  [padding]="true"
+  [icon]="'products/b25-critical-illness'"
+  [title]="summary?.TotalConfirmed | number"
+  [numberPolicy]="'Nombre de malades'"
+  [badgeActive]="true"
+  [badgetitle]="displayUpdates(summary?.NewConfirmed)"
+  [colorbadge]="'orange'"
+  [cardActive]="true"
+  [text]="getDate(date) ? 'Mise à jour :' : ''"
+  [details]="
+    getDate(date) ? 'il y\'a ' + getDate(date)?.minute + ' minutes' : ''
+  "
+></mh-contract-card-first-level>
+
+<mh-contract-card-first-level
+  [padding]="true"
+  [icon]="'products/b02-health-insurance'"
+  [title]="summary?.TotalRecovered | number"
+  [numberPolicy]="'Nombre de guérisons'"
+  [badgeActive]="true"
+  [badgetitle]="displayUpdates(summary?.NewRecovered)"
+  [colorbadge]="'green'"
+  [cardActive]="true"
+  [text]="'Mise à jour: '"
+  [details]="'il y\'a ' + getDate(date)?.minute + ' minutes'"
+></mh-contract-card-first-level>
+
+<ion-card>
+  <ion-card-header>
+  </ion-card-header>
+  <ion-card-content>
+    <mh-sector-graph
+    [padding]="true"
+    [legendVisible]="false"
+    [chartId]="'chart3'"
+    [height]="158"
+    [width]="158"
+    [centerRadius]="40"
+    [colors]="chartData.colors"
+    [dataSet]="chartData.dataSet"
+  ></mh-sector-graph>
+  
+  <div class="legend-container">
+    <ng-container *ngFor="let legend of chartData.legends; index as legendIndex">
+      <div class="legend">
+        <div class="dot" [ngStyle]="{ 'background-color': legend.color }"></div>
+        <div class="legend-texts">
+          <p class="label">{{ legend.label }}</p>
+          <p class="value">
+            <span class="percent">{{ legend.percent }}</span>
+          </p>
+        </div>
+      </div>
+      <div class="divider" *ngIf="(legendIndex + 1) % 2"></div>
+    </ng-container>
+  </div>
+  </ion-card-content>
+</ion-card>
+
+
+

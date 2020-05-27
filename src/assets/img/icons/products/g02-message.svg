@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="16px" viewBox="0 0 24 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 63.1 (101010) - https://sketch.com -->
+    <title>5A54CA75-D851-443E-811B-E96FE3E63349</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M23.3184,18.47235 L0.6819,18.47235 L0.6819,5.44235 L11.8249,12.11935 C11.9329,12.18435 12.0674,12.18435 12.1754,12.11935 L23.3184,5.44235 L23.3184,18.47235 Z M22.4269,5.18185 L12.0004,11.42985 L1.5734,5.18185 L22.4269,5.18185 Z M23.9989,4.80835 C23.9929,4.74635 23.9704,4.68935 23.9359,4.64135 L23.9359,4.64135 L23.9354,4.64085 C23.9219,4.62185 23.9064,4.60485 23.8894,4.58935 C23.8294,4.53485 23.7504,4.50085 23.6629,4.49985 L23.6629,4.49985 L23.6619,4.49985 L23.6614,4.49985 L23.6609,4.49985 L23.6604,4.49985 L23.6594,4.49985 L0.3409,4.49985 L0.3399,4.49985 L0.3394,4.49985 L0.3394,4.49985 L0.3389,4.49985 L0.3374,4.49985 L0.3374,4.49985 C0.2499,4.50085 0.1709,4.53485 0.1109,4.58935 C0.0939,4.60485 0.0784,4.62185 0.0649,4.64085 L0.0644,4.64135 L0.0644,4.64135 C0.0299,4.68935 0.0074,4.74635 0.0019,4.80835 C0.0004,4.82085 -0.0001,4.83335 -0.0001,4.84535 L-0.0001,18.81335 C-0.0001,19.00185 0.1524,19.15435 0.3409,19.15435 L23.6594,19.15435 C23.8479,19.15435 24.0004,19.00185 24.0004,18.81335 L24.0004,4.84535 C24.0004,4.83335 23.9999,4.82085 23.9989,4.80835 L23.9989,4.80835 Z" id="path-1"></path>
+    </defs>
+    <g id="Breakpoint-S" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="24_My-contacts_S" transform="translate(-335.000000, -602.000000)">
+            <g id="06_List_Items/08_SelfContained/06.08.05_Text_Body_Overline/S-Copy-2" transform="translate(0.000000, 574.000000)">
+                <g id="icons/products/red/F-action-navigation/f09-edit" transform="translate(335.000000, 24.000000)">
+                    <g id="icons/products/red/G-communication/g02-message">
+                        <polygon id="Rectangle-path" fill-opacity="0" fill="#FFFFFF" fill-rule="nonzero" points="-1.5455e-13 0 24 0 24 24 -1.5455e-13 24"></polygon>
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="g02-message" fill="#C5281C" xlink:href="#path-1"></use>
+                        <polygon id="Color-Style" fill="#C5281C" mask="url(#mask-2)" points="0 0 24 0 24 24 0 24"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

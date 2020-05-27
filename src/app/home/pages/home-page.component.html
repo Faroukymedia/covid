@@ -1,0 +1,67 @@
+<mwh-navigation-header
+  [desktopMenuIconRight]="'assets/img/icons/profile-icon.svg'"
+></mwh-navigation-header>
+<ion-content>
+  <mh-sticky-box
+    #errorStickyBox
+    id="error-sticky-box"
+    [closeIcon]="true"
+    [padding]="true"
+    [icon]="'close-circle-sharp'"
+    [timerOn]="true"
+    [timer]="10000"
+    [top]="'24px'"
+    [hidden]="!showError"
+  ></mh-sticky-box>
+  <ng-container *ngIf="worldSummary$ | async as summary">
+    <mwh-page-layout>
+      <!-- <div class="welcome-container">
+        <div>
+          <h1>Bienvenue</h1>
+        </div>
+      </div> -->
+      <mh-hero-header-3
+        [titleHeader]="summary?.Global?.TotalConfirmed +
+        summary?.Global?.TotalDeaths + summary?.Global?.TotalRecovered | number"
+        [subTitle]="hero3Subtitle"
+        [backgroundImage]="'./assets/img/DigitalId_Back.png'"
+        [ctas]="hero3Icon"
+        (clickedCta)="iconsClick($event)"
+      ></mh-hero-header-3>
+
+      <div class="world-summary-container" *ngIf="summary.Global">
+        <world-summary
+          [summary]="summary?.Global"
+          [date]="summary?.Date"
+        ></world-summary>
+      </div>
+    </mwh-page-layout>
+  </ng-container>
+
+  <ion-card>
+    <ion-card-header>
+      Graphique : Les pays les plus touchés
+    </ion-card-header>
+    <ion-card-content style="padding: 0px 5px;">
+      <canvas #barCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Graphique : Les pays qui comptent le plus de guérisons
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barRecovered></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Graphique : Les pays qui comptent le plus de morts
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barDeaths></canvas>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

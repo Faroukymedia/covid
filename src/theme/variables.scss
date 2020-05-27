@@ -1,6 +1,27 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+$mh-theme: (
+  generali: #000000,
+  red-15: #000000,
+  red-11: #f1644a,
+  white: (
+    primary: #ffffff,
+    background: #F6F6F6
+  ),
+  black: (
+    primary: #000000,
+    content: #090E15
+  ),
+  grey: (
+    light: #f6f6f6,
+    content: #6F7072,
+    background: #f0f0f0,
+    medium: #6F7072,
+    backdrop: #999999
+  )
+);
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
@@ -76,13 +97,13 @@
   --ion-color-light-tint: #f5f6f9;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   /*
    * Dark Colors
    * -------------------------------------------
    */
 
-  body {
+  /* body {
     --ion-color-primary: #428cff;
     --ion-color-primary-rgb: 66,140,255;
     --ion-color-primary-contrast: #ffffff;
@@ -152,7 +173,7 @@
    * -------------------------------------------
    */
 
-  .ios body {
+  /* .ios body {
     --ion-background-color: #000000;
     --ion-background-color-rgb: 0,0,0;
 
@@ -190,7 +211,7 @@
    * -------------------------------------------
    */
 
-  .md body {
+  /* .md body {
     --ion-background-color: #121212;
     --ion-background-color-rgb: 18,18,18;
 
@@ -224,5 +245,5 @@
     --ion-toolbar-background: #1f1f1f;
 
     --ion-tab-bar-background: #1f1f1f;
-  }
-}
+  } 
+} */

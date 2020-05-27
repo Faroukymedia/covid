@@ -1,0 +1,41 @@
+@font-face {
+    font-weight: 400;
+    font-family: 'Helvetica-Neue-55-Roman';
+    font-style: normal;
+    src: url('assets/fonts/helveticaneueltstd-roman.otf');
+  }
+  
+  @font-face {
+    font-weight: 500;
+    font-family: 'Helvetica-Neue-65-Medium';
+    font-style: normal;
+    src: url('assets/fonts/helveticaneueltstd-md.otf');
+  }
+  
+  @font-face {
+    font-weight: 600;
+    font-family: 'Helvetica-Neue-75-Bold';
+    font-style: normal;
+    src: url('assets/fonts/helveticaneueltstd-bd.otf');
+  }
+  
+  @mixin generali-hv-55 {
+    font-weight: 500;
+    font-family: 'Helvetica-Neue-55-Roman', sans-serif;
+  }
+  
+  @mixin generali-hv-65 {
+    font-weight: 500;
+    font-family: 'Helvetica-Neue-65-Medium', sans-serif;
+  }
+  
+  @mixin generali-hv-75 {
+    font-weight: 500;
+    font-family: 'Helvetica-Neue-75-Bold', sans-serif;
+  }
+  
+  :root {
+    @include generali-hv-55();
+  }
+  
+  

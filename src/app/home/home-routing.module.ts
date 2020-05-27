@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomePage } from './home.page';
-
-const routes: Routes = [
-  {
-    path: '',
-    component: HomePage,
-  }
-];
+import { RouterModule } from '@angular/router';
+import { HomePageComponent } from './pages/home-page.component';
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forChild([
+      {
+        path: '',
+        component: HomePageComponent,
+        data: {
+          isSideMenuPresent: true,
+        },
+      }
+    ]),
+  ],
+  exports: [RouterModule],
 })
-export class HomePageRoutingModule {}
+export class HomeRoutingModule {}
