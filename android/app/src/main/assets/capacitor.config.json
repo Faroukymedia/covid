@@ -1,12 +1,15 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "mobileApp",
+  "appName": "Covid Tracker",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
   "plugins": {
     "SplashScreen": {
-      "launchShowDuration": 0
+      "launchShowDuration": 3000,
+      "launchAutoHide": true,
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP"
     }
   },
   "cordova": {}

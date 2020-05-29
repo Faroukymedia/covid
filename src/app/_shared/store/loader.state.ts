@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { HideLoader, ShowLoader } from './loader.action';
 
-const LOADER_DEFAULT_TEXT = 'loader.default.text';
+const LOADER_DEFAULT_TEXT = 'Chargement...';
 
 export interface LoaderStateModel {
   isVisible: boolean;

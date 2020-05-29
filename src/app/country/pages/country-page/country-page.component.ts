@@ -41,6 +41,10 @@ export class CountryPageComponent implements OnInit {
           console.log(this.countryCode);
           this.getSubscription();
         }
+      }, error => {
+        console.log(error);
+        this.countryCode = 'MA';
+        this.getSubscription();
       });
     }
   }
@@ -52,7 +56,6 @@ export class CountryPageComponent implements OnInit {
       this.worldSummary = data;
       this.countries = data.Countries;
       this.countrySummary = this.getCountry(this.worldSummary);
-      console.log(this.countrySummary);
     });
   }
 
@@ -61,7 +64,20 @@ export class CountryPageComponent implements OnInit {
     if (summary && summary.Countries && summary.Countries.length) {
       console.log(this.countryCode);
       summary.Countries.forEach(country => {
-        if (country.CountryCode === 'MA') {
+        if (country.CountryCode === this.countryCode ) {
+          c = country;
+        }
+      });
+    }
+    return c;
+  }
+
+  public getMACountry(summary: WorldSummary) {
+    let c: Country = {} as Country;
+    if (summary && summary.Countries && summary.Countries.length) {
+      console.log(this.countryCode);
+      summary.Countries.forEach(country => {
+        if (country.CountryCode === 'MA' ) {
           c = country;
         }
       });

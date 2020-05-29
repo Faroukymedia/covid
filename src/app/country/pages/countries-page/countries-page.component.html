@@ -1,0 +1,86 @@
+<mwh-navigation-header
+  [desktopMenuIconRight]="'assets/img/icons/profile-icon.svg'"
+></mwh-navigation-header>
+<ion-content>
+  <ng-container *ngIf="worldSummary$ | async as summary">
+    <mwh-page-layout>
+      
+      <div *ngIf="summary.Countries" class="list-countries">
+       
+        <div *ngFor="let country of summary.Countries; index as i">
+
+          <mh-list-item-black-title-2
+            [padding]="true"
+            [iconLeftActive]="true"
+            [iconRightActive]="true"
+            [ionicIcon]="true"
+            [title]="country.Country"
+            [icon]="'ios-arrow-forward'"
+            [icon]="'./assets/img/icons/countries/'+ country.Slug.toLowerCase() +'.svg'"
+            [icon1]="listArrows[0]"
+            (checkEvent)="toggleInfo('country-' + i, i)"
+          ></mh-list-item-black-title-2>
+          <mh-divider [hrShow]="true" [fullWidth]="true"></mh-divider>
+          <div id="country-{{ i }}" class="country-info-container" data-collapsed="true">
+            
+            
+            <div class="country-container">
+              <mh-list-item-grey-title-1
+                [colorBg]="'grey'"
+                [padding]="true"
+                [subtitle]="'Mise à jour : il y\'a ' + getDate(country.Date)?.minute + ' minutes'"
+                [title]="country.Country"
+              ></mh-list-item-grey-title-1>
+              <mh-divider [hrShow]="true" [fullWidth]="true"></mh-divider>
+              <mh-list-item-multiple-lines
+                [colorBg]="'grey'"
+                [columnOne]="true"
+                [columnTwo]="true"
+                [titlefirstColumn]="'Cas confirmés'"
+                [titleSecondColumn]="'+'"
+                [contribution]="country.TotalConfirmed | number"
+                [contributionSecondColumn]="'300'"
+                [date]="country.NewConfirmed | number"
+                [padding]="true"
+                [icon]="'ios-add-circle-outline'"
+                [isTextSmaller]="true"
+              ></mh-list-item-multiple-lines>
+              <mh-divider [hrShow]="true" [fullWidth]="true"></mh-divider>
+              <mh-list-item-multiple-lines
+                [colorBg]="'grey'"
+                [columnOne]="true"
+                [columnTwo]="true"
+                [titlefirstColumn]="'Nombre de guérisons'"
+                [titleSecondColumn]="'+'"
+                [contribution]="country.TotalRecovered | number"
+                [contributionSecondColumn]="'300'"
+                [date]="country.NewRecovered | number"
+                [padding]="true"
+                [icon]="'ios-add-circle-outline'"
+                [isTextSmaller]="true"
+              ></mh-list-item-multiple-lines>
+              <mh-divider [hrShow]="true" [fullWidth]="true"></mh-divider>
+              <mh-list-item-multiple-lines
+                [colorBg]="'grey'"
+                [columnOne]="true"
+                [columnTwo]="true"
+                [titlefirstColumn]="'Nombre de décès'"
+                [titleSecondColumn]="'+'"
+                [contribution]="country.TotalDeaths | number"
+                [contributionSecondColumn]="'300'"
+                [date]="country.NewDeaths | number"
+                [padding]="true"
+                [icon]="'ios-add-circle-outline'"
+                [isTextSmaller]="true"
+              ></mh-list-item-multiple-lines>
+            </div>
+            
+            <mh-divider [hrShow]="true" [fullWidth]="true"></mh-divider>
+            
+          </div>
+      </div>
+      </div>
+      
+    </mwh-page-layout>
+  </ng-container>
+</ion-content>

@@ -41,6 +41,9 @@ export class CovidState {
       this.covidService.getWorldSummary().subscribe((worldSummary) => {
         context.patchState({ worldSummary });
         context.dispatch(new HideLoader());
+      }, error => {
+        console.log(error);
+        context.dispatch(new HideLoader());
       });
     }
   }

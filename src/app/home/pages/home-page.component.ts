@@ -68,11 +68,12 @@ export class HomePageComponent implements AfterViewInit {
     this.statusBarService.setDefaultStatusBar();
 
     this.worldSummarySubscription = this.worldSummary$.subscribe((data) => {
-      console.log(this.barCanvas, this.barDeaths, this.barRecovered);
       this.worldSummary = data;
       this.updateBarChart(this.getTopConfirmed(this.worldSummary.Countries), this.barCanvas);
       this.updateHorizentalBarChart(this.getTopRecovered(this.worldSummary.Countries), this.barRecovered, 'recovered');
       this.updateHorizentalBarChart(this.getTopDeath(this.worldSummary.Countries), this.barDeaths, 'death');
+    }, error => {
+      this.showErrorStickyBox(error);
     });
   }
 

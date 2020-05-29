@@ -7,7 +7,7 @@ import { WorldSummary } from '../models/world-summary.model';
 })
 export class CovidService {
 
-  private static mock = 'http://localhost:4100/assets/json/mock.json';
+  private static mock = 'http://localhost:4200/assets/json/mock.json';
 
   private static COVID19_API_ENDPOINT = 'https://api.covid19api.com/summary';
 

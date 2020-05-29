@@ -2,12 +2,27 @@
   [desktopMenuIconRight]="'assets/img/icons/profile-icon.svg'"
 ></mwh-navigation-header>
 <ion-content>
-  <ng-container *ngIf="countrySummary">
+  <ng-container>
     <mwh-page-layout>
-      <div class="welcome-container">
-        <world-summary [summary]="countrySummary" [date]="countrySummary?.Date"></world-summary>
+      <div *ngIf="countrySummary" class="country-container">
+        <div class="row errorMsg">
+          <div class="col">
+            <mh-suggestion-card
+              [padding]="true"
+              [description]="'Merci d\'activer l\'option Position de votre device et réssayer'"
+              [icon]="'f40-light-bulb'"
+              [whiteBackground]="true"
+            >
+            </mh-suggestion-card>
+          </div>
+        </div>
       </div>
-      
+      <div *ngIf="!countrySummary" class="country-container">
+        <world-summary
+          [summary]="countrySummary"
+          [date]="countrySummary?.Date"
+        ></world-summary>
+      </div>
     </mwh-page-layout>
   </ng-container>
 </ion-content>

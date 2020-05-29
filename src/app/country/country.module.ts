@@ -10,6 +10,7 @@ import { SharedModule } from '@shared/shared.module';
 import { NgxsModule } from '@ngxs/store';
 import { CovidState } from 'app/home/store/covid.state';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { CountriesPageComponent } from './pages/countries-page/countries-page.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
     SharedModule,
     NgxsModule.forFeature([CovidState])
   ],
-  declarations: [CountryPageComponent],
+  declarations: [CountryPageComponent, CountriesPageComponent],
   providers: [Geolocation],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

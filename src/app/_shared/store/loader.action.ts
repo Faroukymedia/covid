@@ -1,4 +1,4 @@
-const LOADER_DEFAULT_TEXT = 'loader.default.text';
+const LOADER_DEFAULT_TEXT = 'Chargement...';
 
 export class ShowLoader {
     public static readonly type = '[Loader] Show';

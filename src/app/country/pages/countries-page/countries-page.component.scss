@@ -1,0 +1,21 @@
+@import 'helpers';
+@import 'variables';
+
+ion-content {
+  --background: none;
+}
+
+mwh-app-footer {
+  background-color: color(white, background);
+}
+
+.country-info-container {
+  height: 0px;
+  overflow: hidden;
+
+  font-size: calcrem(16px);
+
+  background-color: rgb(240, 240, 240);
+  
+  transition: height .3s;
+}

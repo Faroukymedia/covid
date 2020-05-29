@@ -24,6 +24,13 @@ const defaultPrimaryActionHeaderTabs = [
     route: HOME_PAGE,
   },
   {
+    title: 'Tous les pays',
+    isActive: true,
+    id: 'tab-allpage',
+    hasDividerBottom: true,
+    route: COUNTRY_PAGE + '/all'
+  },
+  {
     title: 'Mon pays',
     isActive: true,
     id: 'tab-localpage',
@@ -81,7 +88,9 @@ export class MenuState {
     const state = context.getState();
     const configuration = { ...state.configuration, ...action.payload };
     configuration.primaryActions.forEach(
-      (tab) => (tab.isActive = action.url && tab.route ? action.url.includes(tab.route.toString()) : false)
+      (tab) => {
+        (tab.isActive = action.url && tab.route ? action.url === '/' + tab.route.toString() : false);
+      }
     );
     context.patchState({
       configuration: { ...configuration },
