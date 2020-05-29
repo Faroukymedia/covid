@@ -14,7 +14,6 @@ import { ParseDatePipe } from './pipe/parse-date.pipe';
 import { SideMenuState } from './store/side-menu.state';
 import { SummaryComponent } from './components/summary/summary.component';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 
 @NgModule({
   imports: [CommonModule, NgxsModule.forFeature([SideMenuState])],
@@ -48,7 +47,7 @@ export class SharedModule {
   public static forRoot(): ModuleWithProviders<SharedModule> {
     return {
       ngModule: SharedModule,
-      providers: [InAppBrowser, Geolocation, LocationAccuracy],
+      providers: [InAppBrowser, Geolocation],
     };
   }
 }

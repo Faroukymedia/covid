@@ -7,13 +7,12 @@ import { SideMenuGuardDisableSideMenu, SideMenuGuardToggleSideMenu } from '@shar
 import { Observable } from 'rxjs';
 import { HomePageGetWorldSummary, HomePageGetPosition } from 'app/home/store/covid.actions';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SideMenuGuard implements CanActivateChild {
-  constructor(private store: Store, private geolocation: Geolocation, private locationAccuracy: LocationAccuracy) { }
+  constructor(private store: Store, private geolocation: Geolocation) { }
 
   public canActivateChild(
     route: ActivatedRouteSnapshot,

@@ -11,6 +11,5 @@
       "androidSplashResourceName": "splash",
       "androidScaleType": "CENTER_CROP"
     }
-  },
-  "cordova": {}
+  }
 }

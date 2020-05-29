@@ -4,7 +4,7 @@
 <ion-content>
   <ng-container>
     <mwh-page-layout>
-      <div *ngIf="countrySummary" class="country-container">
+      <div *ngIf="!countrySummary" class="country-container">
         <div class="row errorMsg">
           <div class="col">
             <mh-suggestion-card
@@ -17,7 +17,7 @@
           </div>
         </div>
       </div>
-      <div *ngIf="!countrySummary" class="country-container">
+      <div *ngIf="countrySummary" class="country-container">
         <world-summary
           [summary]="countrySummary"
           [date]="countrySummary?.Date"
