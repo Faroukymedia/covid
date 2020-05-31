@@ -1,9 +1,14 @@
 {
-  "appId": "io.ionic.starter",
+  "appId": "io.covid.tracker",
   "appName": "Covid Tracker",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
+  "hideLogs": true,
+  "android": {
+    "webContentsDebuggingEnabled": false,
+    "hideLogs": true
+  },
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 3000,

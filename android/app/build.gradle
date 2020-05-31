@@ -1,9 +1,17 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('A:\\Projets\\mobileApp\\key.jks')
+            storePassword 'ammoute'
+            keyAlias = 'key1'
+            keyPassword 'ammmoute'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
-        applicationId "io.ionic.starter"
+        applicationId "io.covid.tracker"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1

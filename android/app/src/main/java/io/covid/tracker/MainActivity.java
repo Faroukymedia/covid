@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package io.covid.tracker;
 
 import android.os.Bundle;
 
