@@ -37,6 +37,8 @@ export class HomePageComponent implements AfterViewInit {
   public barChart!: Chart;
   public showError = false;
 
+  public currentScroll = 0;
+
   public worldSummary?: WorldSummary;
   public worldSummarySubscription!: Subscription;
   public totalCases?: number;
@@ -62,6 +64,10 @@ export class HomePageComponent implements AfterViewInit {
   ];
 
   constructor(private statusBarService: StatusBarService, private socialSharing: SocialSharing) {
+  }
+
+  public handleScroll(scrollOffset: number) {
+    this.currentScroll = scrollOffset;
   }
 
   public ngAfterViewInit(): void {

@@ -1,15 +1,23 @@
-<div class="side-menu-content">
+<div class="side-menu-content" [ngClass]="{ 'side-menu-content-offset': showCloseButton }">
   <section class="side-menu-scrollable">
-    <ng-container>
+   <!--  <ng-container *ngIf="customerInfo$ | async as customerInfo">
       <section class="profile-container">
-       <!--  <img src="assets/img/icons/e11-man-profile.svg" />
-        
-          <p class="profile-title">
-            hello
-          </p> -->
-         
+        <img src="assets/img/icons/e11-man-profile.svg" />
+        <ng-container [ngSwitch]="customerInfo?.infosGeneralesClient?.profil">
+          <p class="profile-title" *ngSwitchCase="profilTypes.PART">
+            {{ customerInfo?.infosGeneralesClient?.prenom }} {{ customerInfo?.infosGeneralesClient?.nom }}
+          </p>
+          <p class="profile-title" *ngSwitchCase="profilTypes.PRO">
+            {{ customerInfo?.infosGeneralesClient?.prenom }} {{ customerInfo?.infosGeneralesClient?.nom }}
+          </p>
+          <p class="profile-title" *ngSwitchDefault>{{ customerInfo?.infosGeneralesClient?.raisonSociale }}</p>
+        </ng-container>
+        <a class="profile-link" (click)="goToSettings()">{{ 'app.side.menu.profile.button' | translate }}</a>
       </section>
-    </ng-container>
+    </ng-container> -->
+    <div *ngIf="showCloseButton" class="close-icon" (click)="onCloseIconClicked()">
+      <mh-ionicon [name]="'close'" [color]="'white'" [size]="'28px'"></mh-ionicon>
+    </div>
     <ng-container #primaryActionsContainer *ngIf="primaryActions && primaryActions.length > 0">
       <section class="primary-actions">
         <ng-container *ngIf="primaryActions && primaryActions.length > 0">

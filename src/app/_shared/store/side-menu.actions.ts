@@ -29,3 +29,9 @@ export class SideMenuGuardToggleSideMenu implements ToggleSideMenu {
 
   constructor(public payload?: boolean) {}
 }
+
+export class PageLayoutToggleSideMenu implements ToggleSideMenu {
+  public static readonly type = '[PageLayout] Toggle Side Menu';
+
+  constructor(public payload?: boolean) {}
+}

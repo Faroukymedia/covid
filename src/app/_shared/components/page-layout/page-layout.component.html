@@ -1,19 +1,22 @@
 <section
+  #pageContainer
   class="side-menu-container"
   *ngIf="configuration$ | async as configuration"
+  [ngClass]="{ 'offset-header': offsetHeader }"
   (swipeLeft)="toggleSideMenu(false)"
   (swipeRight)="toggleSideMenu(true)"
 >
   <div
     class="side-menu"
-    [ngClass]="{ 'side-menu--active': toggleSideMenu$ | async }"
+    [ngClass]="{ 'side-menu--active': toggleSideMenu$ | async, 'offset-header': offsetHeader }"
     *ngIf="configuration && (configuration.primaryActions || configuration.bottomAction)"
   >
     <mh-responsive [breakpoints]="['L', 'XL']">
-      <mwh-side-menu [bottomAction]="configuration.bottomAction"></mwh-side-menu>
+      <mwh-side-menu [showCloseButton]="!offsetHeader" [bottomAction]="configuration.bottomAction"></mwh-side-menu>
     </mh-responsive>
     <mh-responsive [breakpoints]="['S', 'M']">
       <mwh-side-menu
+        [showCloseButton]="!offsetHeader"
         [primaryActions]="configuration.primaryActions"
         [bottomAction]="configuration.bottomAction"
       ></mwh-side-menu>

@@ -3,6 +3,7 @@ import { Navigate } from '@ngxs/router-plugin';
 import { Select, Store } from '@ngxs/store';
 import { HeaderTab } from '@shared/models/header-tab.model';
 import { SideMenuActivateHeaderTab } from '@shared/store/menu.actions';
+import { AppSideMenuToggleSideMenu } from '@shared/store/side-menu.actions';
 
 @Component({
   selector: 'mwh-side-menu',
@@ -10,6 +11,8 @@ import { SideMenuActivateHeaderTab } from '@shared/store/menu.actions';
   styleUrls: ['side-menu.component.scss'],
 })
 export class SideMenuComponent {
+
+  @Input() public showCloseButton = false;
 
   @Input() public primaryActions: HeaderTab[] = [];
   @Input() public bottomAction?: HeaderTab;
@@ -24,6 +27,10 @@ export class SideMenuComponent {
 
   public onActionClicked(tab: HeaderTab) {
     this.store.dispatch(new SideMenuActivateHeaderTab(tab));
+  }
+
+  public onCloseIconClicked() {
+    this.store.dispatch(new AppSideMenuToggleSideMenu(false));
   }
 
 }

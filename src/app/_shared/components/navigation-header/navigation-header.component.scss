@@ -21,7 +21,8 @@ ion-header {
 
   &.header-translucent {
     ion-toolbar {
-      --ion-toolbar-background: transparent;
+      --ion-toolbar-background: #00000000;
+      --background: #00000000;
     }
   }
 
@@ -120,6 +121,7 @@ ion-header {
 
     &--mobile {
       height: get-dimension(s, header-height);
+      transition: background-color .3s;
 
       .logo {
         height: get-dimension(s, logo-height);

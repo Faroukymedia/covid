@@ -14,6 +14,8 @@ export enum HEADER_BG_COLORS {
   WHITE = 'white',
 }
 
+type BackgroundColor = (string & HEADER_BG_COLORS.RED) | HEADER_BG_COLORS.WHITE | HEADER_BG_COLORS.TRANSPARENT;
+
 @Component({
   selector: 'mwh-navigation-header',
   templateUrl: './navigation-header.component.html',
@@ -21,10 +23,10 @@ export enum HEADER_BG_COLORS {
   encapsulation: ViewEncapsulation.None,
 })
 export class NavigationHeaderComponent implements OnInit {
-  @Input() public backgroundColor:
+  /* @Input() public backgroundColor:
     | (string & HEADER_BG_COLORS.RED)
     | HEADER_BG_COLORS.WHITE
-    | HEADER_BG_COLORS.TRANSPARENT;
+    | HEADER_BG_COLORS.TRANSPARENT; */
   @Input() public logo = '';
   @Input() public title = '';
   @Input() public desktopMenuIconRight = '';
@@ -35,6 +37,16 @@ export class NavigationHeaderComponent implements OnInit {
   @Output() public tabClicked: EventEmitter<string>;
   @Output() public logoClicked: EventEmitter<void>;
   @Output() public leftMobileClicked: EventEmitter<void>;
+
+  get backgroundColor(): BackgroundColor {
+    return this.backgroundColorField;
+  }
+
+  @Input()
+  set backgroundColor(color: BackgroundColor) {
+    this.backgroundColorField = color;
+    this.updateBackgroundColor(color);
+  }
 
   @Select(MenuState.primaryActions)
   public tabs$!: Observable<HeaderTab[]>;
@@ -49,6 +61,8 @@ export class NavigationHeaderComponent implements OnInit {
   @Select(SideMenuState.isDisabled)
   public disableSideMenu$!: Observable<boolean>;
 
+  private backgroundColorField!: BackgroundColor;
+
   constructor(private deviceService: DeviceService, private store: Store) {
     this.isApp = this.deviceService.isApp();
     this.backgroundColor = HEADER_BG_COLORS.RED;
@@ -58,11 +72,7 @@ export class NavigationHeaderComponent implements OnInit {
   }
 
   public ngOnInit() {
-    this.headerCommonClasses = {
-      header: true,
-      [`header--${this.backgroundColor}`]: true,
-    };
-    this.translucentHeader = this.backgroundColor === HEADER_BG_COLORS.TRANSPARENT;
+    this.updateBackgroundColor(this.backgroundColor);
   }
 
   public tabClick(tab: HeaderTab) {
@@ -85,4 +95,13 @@ export class NavigationHeaderComponent implements OnInit {
   public leftMobileClick() {
     this.leftMobileClicked.emit();
   }
+
+  private updateBackgroundColor(color: BackgroundColor) {
+    this.headerCommonClasses = {
+      header: true,
+      [`header--${color}`]: true,
+    };
+    this.translucentHeader = color === HEADER_BG_COLORS.TRANSPARENT;
+  }
+
 }

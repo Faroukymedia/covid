@@ -47,6 +47,8 @@ export class CountriesPageComponent implements OnInit {
   }
 
   public toggleInfo(elementId: string, index: number) {
+    console.log(elementId, index, this.listArrows[index]);
+    
     this.listArrows[index] = this.listArrows[index] === ARROW_DOWN ? ARROW_UP : ARROW_DOWN;
     CollapseHelper.toggle(elementId);
   }

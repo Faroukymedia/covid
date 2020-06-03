@@ -1,20 +1,9 @@
-<mwh-navigation-header
-  [desktopMenuIconRight]="'assets/img/icons/profile-icon.svg'"
+<ion-content [scrollEvents]="true" (ionScroll)="handleScroll($event.detail.scrollTop)">
+  <mwh-navigation-header
+  [backgroundColor]="currentScroll < 25 ? 'transparent' : 'red'"
 ></mwh-navigation-header>
-<ion-content>
-  <mh-sticky-box
-    #errorStickyBox
-    id="error-sticky-box"
-    [closeIcon]="true"
-    [padding]="true"
-    [icon]="'close-circle-sharp'"
-    [timerOn]="true"
-    [timer]="10000"
-    [top]="'24px'"
-    [hidden]="!showError"
-  ></mh-sticky-box>
-  <ng-container *ngIf="worldSummary$ | async as summary">
-    <mwh-page-layout>
+    <mwh-page-layout *ngIf="worldSummary$ | async as summary" [offsetHeader]="false" (screenScrolled)="handleScroll($event)">
+      <div class="header-container">
       <!-- <div class="welcome-container">
         <div>
           <h1>Bienvenue</h1>
@@ -28,16 +17,14 @@
         [ctas]="hero3Icon"
         (clickedCta)="iconsClick($event)"
       ></mh-hero-header-3>
-
+      </div>
       <div class="world-summary-container" *ngIf="summary.Global">
         <world-summary
           [summary]="summary?.Global"
           [date]="summary?.Date"
         ></world-summary>
-      </div>
-    </mwh-page-layout>
-  </ng-container>
 
+        
   <ion-card>
     <ion-card-header>
       Graphique : Les pays les plus touchéss
@@ -64,4 +51,6 @@
       <canvas #barDeaths></canvas>
     </ion-card-content>
   </ion-card>
+      </div>
+    </mwh-page-layout>
 </ion-content>

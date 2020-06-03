@@ -7,6 +7,7 @@ import {
   SideMenuGuardDisableSideMenu,
   SideMenuGuardToggleSideMenu,
   ToggleSideMenu,
+  PageLayoutToggleSideMenu,
 } from './side-menu.actions';
 
 export interface SideMenuStateModel {
@@ -41,6 +42,7 @@ export class SideMenuState {
   @Action(SideMenuGuardToggleSideMenu)
   @Action(NavigationHeaderToggleSideMenu)
   @Action(AppSideMenuToggleSideMenu)
+  @Action(PageLayoutToggleSideMenu)
   public toggleSideMenu(context: StateContext<SideMenuStateModel>, action: ToggleSideMenu): void {
     let newState = !context.getState().isVisible;
 

@@ -4,29 +4,67 @@
 :host {
   height: 100%;
 
+  background-color: rgba(color(white, background), 1);
+  background-image: url('/assets/img/DigitalId_Back.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  .header-container {
+    width: 100%;
+
+    @include mq-breakpoint-s() {
+      padding-top: calc(#{get-dimension(s, header-height)} + env(safe-area-inset-top));
+    }
+
+    @include mq-breakpoint-m() {
+      padding-top: calc(#{get-dimension(m, header-height)} + env(safe-area-inset-top));
+    }
+
+    @include mq-breakpoint-l() {
+      padding-top: calc(#{get-dimension(l, header-height)} + env(safe-area-inset-top));
+    }
+
+    @include mq-breakpoint-xl() {
+      padding-top: calc(#{get-dimension(xl, header-height)} + env(safe-area-inset-top));
+    }
+  }
+
+  mwh-navigation-header {
+    position: fixed;
+
+    top: 0;
+    z-index: 100;
+
+    width: 100%;
+  }
+
   ion-content {
     --background: none;
   }
 
-  .welcome-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
+  .world-summary-container {
+    height: 100%;
+    // WA-8: We don't have the definitive image yet but once we have, we should
+    // put its height here, it will prevent the screen from showing it while loading
+    min-height: calcrem(500px);
 
-    color: rgba(color(white, primary), 1);
-    text-align: center;
+    margin-top: calcrem(-72px);
+    padding-top: calcrem(72px);
+    overflow: hidden;
 
-    background-color: rgba(black, 0.25);
+    background-color: white;
 
     span.red {
       color: color(red-11);
     }
 
     h1 {
-      font-size: calcrem(24px);
-      line-height: calcrem(32px);
+      padding: calcrem(0px) calcrem(16px) calcrem(16px);
+
+      color: color(black, content);
+      font-size: calcrem(22px);
+      line-height: calcrem(24px);
+      letter-spacing: calcrem(0.4px);
     }
 
     h4 {
@@ -46,5 +84,4 @@
       }
     }
   }
-
 }
