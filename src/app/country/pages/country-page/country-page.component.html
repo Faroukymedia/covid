@@ -1,10 +1,20 @@
 <mwh-navigation-header
-  [desktopMenuIconRight]="'assets/img/icons/profile-icon.svg'"
 ></mwh-navigation-header>
 <ion-content>
   <ng-container>
     <mwh-page-layout>
-      <div *ngIf="!countrySummary" class="country-container">
+      <div *ngIf="countrySummary">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+    <world-summary
+      [summary]="countrySummary"
+      [date]="countrySummary?.Date"
+    ></world-summary></ion-col></ion-row>
+    <ion-row>
+      <ion-col><div class="spacing"></div></ion-col></ion-row></ion-grid>
+  </div>
+      <div *ngIf="!countrySummary">
         <div class="row errorMsg">
           <div class="col">
             <mh-suggestion-card
@@ -16,12 +26,6 @@
             </mh-suggestion-card>
           </div>
         </div>
-      </div>
-      <div *ngIf="countrySummary" class="country-container">
-        <world-summary
-          [summary]="countrySummary"
-          [date]="countrySummary?.Date"
-        ></world-summary>
       </div>
     </mwh-page-layout>
   </ng-container>

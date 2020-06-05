@@ -1,5 +1,5 @@
-@import '../../../../theme/helpers.scss';
-@import '../../../../theme/variables.scss';
+@import 'helpers';
+@import 'variables';
 
 // height: 100%;
 .side-menu-content {
@@ -11,8 +11,14 @@
 
   background-color: color(red-15);
 
+  &.side-menu-content-offset {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
   .close-icon {
     position: absolute;
+    top: env(safe-area-inset-top);
 
     display: block;
 
@@ -24,7 +30,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: calcrem(16px);
+    padding: calcrem(56px);
 
     color: color(white, primary);
 
@@ -37,6 +43,7 @@
     .profile-title {
       font-size: calcrem(22px);
       line-height: calcrem(32px);
+      text-align: center;
     }
 
     .profile-link {
@@ -97,7 +104,7 @@
     left: 0;
 
     width: 100%;
-    padding: calcrem(11px) 0 calcrem(11px) calcrem(52px);
+    padding: calcrem(11px) 0 env(safe-area-inset-bottom) calcrem(52px);
 
     background-color: color(generali);
     cursor: pointer;

@@ -1,3 +1,4 @@
+<div>
 <mh-contract-card-first-level
   [padding]="true"
   [icon]="'products/g59-exclamation-mark'"
@@ -57,7 +58,7 @@
   ></mh-sector-graph>
   
   <div class="legend-container">
-    <ng-container *ngFor="let legend of chartData.legends; index as legendIndex">
+    <ng-container *ngFor="let legend of chartData.legends; index as legendIndex; last as isLast">
       <div class="legend">
         <div class="dot" [ngStyle]="{ 'background-color': legend.color }"></div>
         <div class="legend-texts">
@@ -67,11 +68,12 @@
           </p>
         </div>
       </div>
-      <div class="divider" *ngIf="(legendIndex + 1) % 2"></div>
+      <div class="divider" *ngIf="!isLast"></div>
     </ng-container>
   </div>
   </ion-card-content>
 </ion-card>
+</div>
 
 
 

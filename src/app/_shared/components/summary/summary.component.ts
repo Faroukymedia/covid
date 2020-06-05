@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { Summary } from 'app/home/models/world-summary.model';
 import { SectorGraphDataset } from '@generali/mobilehub-ui-core/dist/types/components/interfaces';
 

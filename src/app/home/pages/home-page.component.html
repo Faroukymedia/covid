@@ -4,16 +4,11 @@
 ></mwh-navigation-header>
     <mwh-page-layout *ngIf="worldSummary$ | async as summary" [offsetHeader]="false" (screenScrolled)="handleScroll($event)">
       <div class="header-container">
-      <!-- <div class="welcome-container">
-        <div>
-          <h1>Bienvenue</h1>
-        </div>
-      </div> -->
       <mh-hero-header-3
         [titleHeader]="summary?.Global?.TotalConfirmed +
         summary?.Global?.TotalDeaths + summary?.Global?.TotalRecovered | number"
         [subTitle]="hero3Subtitle"
-        [backgroundImage]="'./assets/img/DigitalId_Back.png'"
+        [backgroundImage]="'none'"
         [ctas]="hero3Icon"
         (clickedCta)="iconsClick($event)"
       ></mh-hero-header-3>
