@@ -4,6 +4,11 @@
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
+  "hideLogs": true,
+  "android": {
+    "webContentsDebuggingEnabled": false,
+    "hideLogs": true
+  },
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 3000,

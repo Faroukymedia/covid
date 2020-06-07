@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { CovidState } from 'app/home/store/covid.state';
 import { Observable } from 'rxjs';
@@ -6,6 +6,7 @@ import { WorldSummary, Country } from 'app/home/models/world-summary.model';
 import { CollapseHelper } from '@shared/helpers/collapse.helper';
 import { ShowLoader, HideLoader } from '@shared/store/loader.action';
 import { LoaderState } from '@shared/store/loader.state';
+import { IonInfiniteScroll } from '@ionic/angular';
 
 const ARROW_DOWN = 'ios-arrow-down';
 const ARROW_UP = 'ios-arrow-up';
@@ -16,6 +17,9 @@ const ARROW_UP = 'ios-arrow-up';
   styleUrls: ['./countries-page.component.scss'],
 })
 export class CountriesPageComponent implements OnInit {
+
+  @ViewChild(IonInfiniteScroll)
+  public infiniteScroll!: IonInfiniteScroll;
 
   @Select(CovidState.worldSummary)
   public worldSummary$!: Observable<WorldSummary>;
@@ -62,5 +66,22 @@ export class CountriesPageComponent implements OnInit {
       const seconds = Math.floor(diff / 1000) - ((days * 24 * 60 * 60) + (hours * 60 * 60) + (minutes * 60));
       return { day: days, hour: hours, minute: minutes, second: seconds };
     }
+  }
+
+  public loadData(event: any) {
+    setTimeout(() => {
+      console.log('Done');
+      event.target.complete();
+
+      // App logic to determine if all data is loaded
+      // and disable the infinite scroll
+     /*  if (data.length === 1000) {
+        event.target.disabled = true;
+      } */
+    }, 500);
+  }
+
+  public toggleInfiniteScroll() {
+    this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
   }
 }

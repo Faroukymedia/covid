@@ -14,8 +14,8 @@ export class CovidService {
   constructor(private httpClient: HttpClient) { }
 
   public getWorldSummary() {
-    // const url = CovidService.COVID19_API_ENDPOINT;
-    const url = CovidService.mock;
+    const url = CovidService.COVID19_API_ENDPOINT;
+    // const url = CovidService.mock;
 
     return this.httpClient.get<WorldSummary>(url);
   }
