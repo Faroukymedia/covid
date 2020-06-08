@@ -17,7 +17,6 @@ const ARROW_UP = 'ios-arrow-up';
   styleUrls: ['./countries-page.component.scss'],
 })
 export class CountriesPageComponent implements OnInit {
-
   @ViewChild(IonInfiniteScroll)
   public infiniteScroll!: IonInfiniteScroll;
 
@@ -29,18 +28,68 @@ export class CountriesPageComponent implements OnInit {
 
   public listArrows: string[] = [];
   public countries: Country[] = [];
+  public timeArray: { title: string; selected: boolean; }[];
   constructor(private store: Store) {
+    this.timeArray = [
+      {
+        title: 'A-Z',
+        selected: true
+      },
+      {
+        title: 'Actifs',
+        selected: false
+      },
+      {
+        title: 'Décès',
+        selected: false
+      }
+    ];
+  }
+
+  public ngOnInit() {
+    this.store.dispatch(new ShowLoader());
     this.listArrows = [];
     this.worldSummary$.subscribe((data) => {
       this.countries = data.Countries;
+      this.apphabeticSort(this.countries);
       if (data) {
         this.initArrows(data.Countries);
+        this.store.dispatch(new HideLoader());
       }
-    }
-    );
+    });
   }
 
-  public ngOnInit() {}
+  public apphabeticSort(array: Country[]) {
+    if (array && array.length) {
+     return array.sort((a, b) => {
+        if (a.Country < b.Country) {
+          return -1;
+        }
+        if (a.Country > b.Country) {
+          return 1;
+        }
+        return 0;
+      });
+    }
+  }
+
+  public getTopConfirmed(countries: Country[]) {
+    if (countries && countries.length) {
+      return countries.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed);
+    }
+  }
+
+  public getTopRecovered(countries: Country[]) {
+    if (countries && countries.length) {
+      return countries.sort((a, b) => b.TotalRecovered - a.TotalRecovered);
+    }
+  }
+
+  public getTopDeath(countries: Country[]) {
+    if (countries && countries.length) {
+      return countries.sort((a, b) => b.TotalDeaths - a.TotalDeaths);
+    }
+  }
 
   public initArrows(countries: Country[]) {
     if (countries && countries.length) {
@@ -52,8 +101,8 @@ export class CountriesPageComponent implements OnInit {
 
   public toggleInfo(elementId: string, index: number) {
     console.log(elementId, index, this.listArrows[index]);
-    
-    this.listArrows[index] = this.listArrows[index] === ARROW_DOWN ? ARROW_UP : ARROW_DOWN;
+    this.listArrows[index] =
+      this.listArrows[index] === ARROW_DOWN ? ARROW_UP : ARROW_DOWN;
     CollapseHelper.toggle(elementId);
   }
 
@@ -61,27 +110,30 @@ export class CountriesPageComponent implements OnInit {
     if (date) {
       const diff = new Date().getTime() - new Date(date).getTime();
       const days = Math.floor(diff / (60 * 60 * 24 * 1000));
-      const hours = Math.floor(diff / (60 * 60 * 1000)) - (days * 24);
-      const minutes = Math.floor(diff / (60 * 1000)) - ((days * 24 * 60) + (hours * 60));
-      const seconds = Math.floor(diff / 1000) - ((days * 24 * 60 * 60) + (hours * 60 * 60) + (minutes * 60));
+      const hours = Math.floor(diff / (60 * 60 * 1000)) - days * 24;
+      const minutes =
+        Math.floor(diff / (60 * 1000)) - (days * 24 * 60 + hours * 60);
+      const seconds =
+        Math.floor(diff / 1000) -
+        (days * 24 * 60 * 60 + hours * 60 * 60 + minutes * 60);
       return { day: days, hour: hours, minute: minutes, second: seconds };
     }
   }
 
-  public loadData(event: any) {
-    setTimeout(() => {
-      console.log('Done');
-      event.target.complete();
-
-      // App logic to determine if all data is loaded
-      // and disable the infinite scroll
-     /*  if (data.length === 1000) {
-        event.target.disabled = true;
-      } */
-    }, 500);
-  }
-
-  public toggleInfiniteScroll() {
-    this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
+  public checkEvent(event: any) {
+    switch (event.detail) {
+      case 'A-Z':
+        this.apphabeticSort(this.countries);
+        break;
+      case 'Actifs':
+        this.getTopConfirmed(this.countries);
+        break;
+      case 'Décès':
+        this.getTopDeath(this.countries);
+        break;
+      default:
+        this.apphabeticSort(this.countries);
+        break;
+    }
   }
 }

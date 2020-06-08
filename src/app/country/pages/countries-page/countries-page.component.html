@@ -1,13 +1,21 @@
 <mwh-navigation-header
 ></mwh-navigation-header>
 <ion-content>
-  <ng-container *ngIf="worldSummary$ | async as summary">
+  <ng-container *ngIf="worldSummary$ | async as summary; else loading">
     <mwh-page-layout>
-      
-      <div *ngIf="summary.Countries" class="list-countries">
+      <mh-calendar-picker
+      id="mh-calendar-picker_1"
+      [iconActive]="false"
+      [timeArray]="timeArray"
+      [padding]="true"
+      [icon]="'f01-adjust-contract-r'"
+      (iconSelect)="checkEvent($event)"
+      (change)="checkEvent($event)"
+      ></mh-calendar-picker>
+      <div *ngIf="countries" class="list-countries">
        
-        <div *ngFor="let country of summary.Countries; index as i">
-
+        <div *ngFor="let country of countries; index as i">
+          <div *ngIf="country">
           <mh-list-item-black-title-2
             [padding]="true"
             [iconLeftActive]="true"
@@ -79,7 +87,8 @@
           </div>
       </div>
       </div>
-      
+      </div>
     </mwh-page-layout>
   </ng-container>
+  <ng-template #loading>Loading...</ng-template>
 </ion-content>
